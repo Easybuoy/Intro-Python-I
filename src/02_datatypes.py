@@ -21,6 +21,4 @@ print(x + int(y))
 
 
 # YOUR CODE HERE
-x = 20
-y = 37
-print(str(x+y))
+print(str(x) +y)
