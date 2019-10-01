@@ -22,3 +22,11 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+userInput = sys.argv
+year = datetime.now().year
+month = datetime.now().month
+print(userInput)
+
+if (not userInput):
+  print(calendar.month(year, month))
