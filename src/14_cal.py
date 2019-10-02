@@ -23,10 +23,20 @@ import sys
 import calendar
 from datetime import datetime
 
-userInput = sys.argv
+
+today = datetime.now()
 year = datetime.now().year
 month = datetime.now().month
-print(userInput)
 
-if (not userInput):
-  print(calendar.month(year, month))
+def myCalendar(_, month = month, year = year):
+  try:
+    month = int(month)
+    year = int(year)
+    if month in range(1, 13):
+      return calendar.month(year, month)
+    return 'Invalid Input. Expected -> filename.py month(1-12) year'
+  except ValueError as e:
+    return 'Please Check input: filename(string) month(int) year(int)'
+
+userInput = sys.argv
+print(myCalendar(*userInput))
